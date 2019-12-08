@@ -18,7 +18,7 @@ export const clientReducer = (state = initialState, action) => {
             return {
                 ...state,
                 allClients: [{ ...action.payload}, ...state.allClients]
-            }
+            };
         default:
             return state;
     }

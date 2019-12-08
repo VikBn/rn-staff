@@ -2,7 +2,7 @@ import React from 'react';
 import {View, StyleSheet, Text, ImageBackground, TouchableOpacity} from "react-native";
 
 export const ClientItem = ({item, onOpen}) => {
-    const {text, img} = item;
+    const {firstName, img} = item;
     return (
         <TouchableOpacity activeOpacity={0.7} onPress={() => onOpen(item)}>
             <View style={styles.item}>
@@ -10,7 +10,7 @@ export const ClientItem = ({item, onOpen}) => {
                     <ImageBackground style={styles.image} source={{uri: img}}/>
                 </View>
                 <View style={styles.contentWrapper}>
-                    <Text style={styles.title}>{text}</Text>
+                    <Text style={styles.title}>{firstName}</Text>
                 </View>
             </View>
         </TouchableOpacity>

@@ -2,7 +2,6 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import {View, Text, StyleSheet, Image, ScrollView, ImageBackground} from 'react-native';
 import {HeaderButtons, Item} from "react-navigation-header-buttons";
-import {DATA} from "../data";
 import {AppHeaderIcon} from "../components/AppHeaderIcon";
 
 export const ClientProfileScreen = ({navigation}) => {
@@ -24,10 +23,10 @@ export const ClientProfileScreen = ({navigation}) => {
 };
 
 ClientProfileScreen.navigationOptions = ({navigation}) => {
-    const name = navigation.getParam('name');
+    const firstName = navigation.getParam('firstName');
 
     return {
-        headerTitle: name,
+        headerTitle: firstName,
         headerRight: <HeaderButtons title='Menu' HeaderButtonComponent={AppHeaderIcon}>
             <Item
                 title='Menu'

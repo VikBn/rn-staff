@@ -4,6 +4,9 @@ import {AppLoading} from "expo";
 import {bootstrap} from "./src/bootstrap";
 import {AppNavigation} from "./src/navigation/AppNavigation";
 import store from './src/store';
+// import { YellowBox } from 'react-native';
+// console.ignoredYellowBox = ['Remote debugger'];
+// YellowBox.ignoreWarnings(['Remote debugger']);
 
 export default function App() {
   const [isReady, setIsReady] = useState(false);

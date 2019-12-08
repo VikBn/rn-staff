@@ -8,7 +8,7 @@ export const ClientListScreen = ({navigation}) => {
     const openProfileHandler = client => {
         navigation.navigate('ClientProfile', {
             clientId: client.id,
-            name: client.text
+            firstName: client.firstName
         })
     };
 
@@ -19,9 +19,8 @@ export const ClientListScreen = ({navigation}) => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        console.log(loadClients())
         dispatch(loadClients())
-    }, [dispatch]);
+    },[dispatch]);
 
     const allClients = useSelector(state => state.client.allClients);
 

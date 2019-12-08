@@ -87,10 +87,4 @@ const BottomNavigation = Platform.OS === 'android'
     }
 });
 
-// const BottomNavigation = createBottomTabNavigator(bottomTabsConfig, {
-//     tabBarOptions: {
-//         activeTintColor: THEME.MAIN_COLOR
-//     }
-// });
-
 export const AppNavigation = createAppContainer(BottomNavigation);
