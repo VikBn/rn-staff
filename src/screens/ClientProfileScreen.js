@@ -17,6 +17,9 @@ export const ClientProfileScreen = ({navigation}) => {
                 <Text style={styles.subtitle}>
                     Personal Info
                 </Text>
+                <Text>
+                    {client.lastName}
+                </Text>
             </View>
         </ScrollView>
     )

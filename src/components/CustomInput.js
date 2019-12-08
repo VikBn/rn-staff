@@ -2,7 +2,7 @@ import React, {PureComponent} from "react";
 import {TextInput, View, StyleSheet} from 'react-native'
 import { Input } from 'react-native-elements';
 
-export const CustomInput = ({label, placeholder}) => {
+export const CustomInput = ({label, placeholder, value, onHandleChange}) => {
     // const [field, meta] = useTextField(label.toLowerCase());
     // const hasError = !!meta.error && !!meta.touched;
     return (
@@ -12,6 +12,8 @@ export const CustomInput = ({label, placeholder}) => {
                 placeholder={placeholder}
                 errorStyle={{ color: 'red' }}
                 errorMessage='Enter a valid label'
+                onChangeText={onHandleChange}
+                value={value}
             />
         </View>
     )

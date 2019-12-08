@@ -34,10 +34,11 @@ const useFormik = props => {
 
     const photoPickHandler = uri => {
         imgRef.current = uri;
+        setValues(prevValues => ({...prevValues, img: imgRef.current}))
     };
 
     const handleChange = name => text => {
-        setValues(prevValues => ({...prevValues, [name]: text, img: imgRef.current}))
+        setValues(prevValues => ({...prevValues, [name]: text}))
     };
 
     const handleSubmit = async () => {
@@ -46,6 +47,7 @@ const useFormik = props => {
 
     return { values, setValues, handleChange, handleSubmit, photoPickHandler }
 };
+
 
 export const AddClientScreen = ({navigation}) => {
     const dispatch = useDispatch();
@@ -88,19 +90,21 @@ export const AddClientScreen = ({navigation}) => {
                             returnKeyType='next'
                             value={formik.values.lastName}
                         />
-                        <TextInput
-                            style={styles.textInput}
-                            label='Email Address'
-                            onChangeText={formik.handleChange('email')}
-                            placeholder='Enter Email Address'
-                            keyboardType='email-address'
-                            textContentType='emailAddress'
-                            returnKeyType='next'
-                            value={formik.values.email}
-                        />
+                        {/*<TextInput*/}
+                        {/*    style={styles.textInput}*/}
+                        {/*    label='Email Address'*/}
+                        {/*    onChangeText={formik.handleChange('email')}*/}
+                        {/*    placeholder='Enter Email Address'*/}
+                        {/*    keyboardType='email-address'*/}
+                        {/*    textContentType='emailAddress'*/}
+                        {/*    returnKeyType='next'*/}
+                        {/*    value={formik.values.email}*/}
+                        {/*/>*/}
                         <CustomInput
                             label='Email Address'
                             placeholder='Enter Email Address'
+                            onHandleChange={formik.handleChange('email')}
+                            value={formik.values.email}
                         />
                         <Button
                             title='Create Account'
